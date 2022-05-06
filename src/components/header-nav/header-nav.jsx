@@ -9,7 +9,7 @@ import {
     ButtonWhite
 } from '../../components-styled/buttons-styled';
 
-function HeaderNav() {
+function HeaderNav({ handleToggle }) {
     return (
         <>
             <HeaderNavWrapperBorder>
@@ -39,8 +39,9 @@ function HeaderNav() {
                         </li>
                     </HeaderNavUl>
                     <div>
+                        <input onClick={handleToggle} type="checkbox" />
                         <ButtonWhite>Вход</ButtonWhite>
-                        <ButtonBlue>Зарегестрироваться</ButtonBlue>
+                        <ButtonBlue>Зарегистрироваться</ButtonBlue>
                     </div>
                 </HeaderNavWrapper>
             </HeaderNavWrapperBorder>

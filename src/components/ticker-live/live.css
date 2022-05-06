@@ -1,0 +1,37 @@
+.marquee {
+    width:100%;
+    white-space:nowrap;
+    overflow:hidden;
+    display: flex;
+    justify-content: space-between;
+}
+     
+.marquee span {
+    display: flex;
+    color:#212121;
+    font-size:13px;
+    padding-left:100%;
+    -webkit-animation: marquee 28s infinite linear;
+    animation: marquee 28s infinite linear;
+}
+     
+@-webkit-keyframes marquee {
+    0%{-webkit-transform: translate(0, 0);}
+    100%{-webkit-transform: translate(-100%, 0);}
+}
+@keyframes marquee {
+    0%{transform: translate(0, 0);}
+    100%{transform: translate(-100%, 0)}
+}
+
+.live-items {
+    display: flex;
+    margin-right: 82px;
+    align-items: center;
+}
+.live-items p {
+    margin-right: 7px;
+}
+.live-items img {
+    margin-right: 7px;
+}

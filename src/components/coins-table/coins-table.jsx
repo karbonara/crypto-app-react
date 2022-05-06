@@ -1,26 +1,41 @@
+import {
+    CoinsTableTd,
+    CoinsTableTr,
+    CoinsTableHeaderTr,
+    CoinsTableHeaderTh
+} from './coins-table-styled';
+
 function CoinsTable({ dataCrtypto }) {
     return (
         <>
-            <table>
+            <table style={{ borderSpacing: '0', borderCollapse: 'collapse', width: '80vw' }}>
                 <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>FullName</th>
-                        <th>Цена</th>
-                        <th>Объем (24 ч)</th>
-                    </tr>
+                    <CoinsTableHeaderTr>
+                        <CoinsTableHeaderTh>Наименование</CoinsTableHeaderTh>
+                        <CoinsTableHeaderTh>Полное название</CoinsTableHeaderTh>
+                        <CoinsTableHeaderTh>24ч %</CoinsTableHeaderTh>
+                        <CoinsTableHeaderTh>Цена</CoinsTableHeaderTh>
+                        <CoinsTableHeaderTh>Объем (24 ч)</CoinsTableHeaderTh>
+                        <CoinsTableHeaderTh>Изменение цены (24 ч)</CoinsTableHeaderTh>
+                    </CoinsTableHeaderTr>
                 </thead>
                 <tbody>
                     {dataCrtypto.map((row) => (
-                        <tr key={row.name}>
-                            <td style={{
-                                display: 'flex',
-                                alignItems: 'center',
-                            }}> <img width={24} src={row.imageUrl} alt={row.name} /> {row.name}</td>
-                            <td>{row.FullName}</td>
-                            <td>$ {row.price}</td>
-                            <td>{row.volume24hour}</td>
-                        </tr>
+                        <CoinsTableTr key={row.name}>
+                            <CoinsTableTd>
+                                <div style={{
+                                    alignItems: 'center',
+                                    display: 'flex'
+                                }}>
+                                    <img width={24} src={row.imageUrl} alt={row.name} /> {row.name}
+                                </div>
+                            </CoinsTableTd>
+                            <CoinsTableTd>{row.FullName}</CoinsTableTd>
+                            <CoinsTableTd>{row.change24hour}</CoinsTableTd>
+                            <CoinsTableTd>$ {row.price}</CoinsTableTd>
+                            <CoinsTableTd>{row.volume24hour}</CoinsTableTd>
+                            <CoinsTableTd>{row.changeDay}</CoinsTableTd>
+                        </CoinsTableTr>
                     ))}
                 </tbody>
             </table>

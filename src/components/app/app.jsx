@@ -1,14 +1,13 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import { Route, Routes } from "react-router-dom";
-import Main from "../../pages/main/main";
-import Layout from "../layout/layout";
+import { Route, Routes } from 'react-router-dom';
+import Main from '../../pages/main/main';
+import Layout from '../layout/layout';
+import { URL } from '../../utils/utils';
 
 function App() {
 
     const [dataCrtypto, setDataCrtypto] = useState([]);
-
-    const URL = 'https://www.cryptocompare.com/';
 
     useEffect(() => {
         axios.get('https://min-api.cryptocompare.com/data/top/totalvolfull?limit=30&tsym=USD')
@@ -20,10 +19,12 @@ function App() {
                         imageUrl: `${URL}/${coin.CoinInfo.ImageUrl}`,
                         price: coin.RAW.USD.PRICE.toFixed(4),
                         volume24hour: coin.RAW.USD.VOLUME24HOUR.toFixed(1),
+                        change24hour: coin.DISPLAY.USD.CHANGEPCT24HOUR,
+                        changeDay: coin.DISPLAY.USD.CHANGEDAY,
                     };
                     return obj;
                 })
-                setDataCrtypto(coins)
+                setDataCrtypto(coins);
             });
     }, []);
 
