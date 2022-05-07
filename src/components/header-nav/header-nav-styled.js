@@ -23,6 +23,7 @@ export const HeaderNavUl = styled.ul`
     padding: 0;
     list-style: none;
     margin: 0;
+    width: 50%;
     @media (max-width: 1300px) {
         display: none;
     }

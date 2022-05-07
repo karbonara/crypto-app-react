@@ -4,13 +4,14 @@ import { Route, Routes } from 'react-router-dom';
 import Main from '../../pages/main/main';
 import Layout from '../layout/layout';
 import { URL } from '../../utils/utils';
+import About from '../../pages/about/about';
 
 function App() {
 
     const [dataCrtypto, setDataCrtypto] = useState([]);
 
     useEffect(() => {
-        axios.get('https://min-api.cryptocompare.com/data/top/totalvolfull?limit=30&tsym=USD')
+        axios.get('https://min-api.cryptocompare.com/data/top/totalvolfull?limit=20&tsym=USD')
             .then(({ data }) => {
                 const coins = data.Data.map((coin) => {
                     const obj = {
@@ -33,6 +34,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<Layout dataCrtypto={dataCrtypto} />} >
                     <Route index element={<Main dataCrtypto={dataCrtypto} />} />
+                    <Route path='about' element={<About />} />
                 </Route>
             </Routes>
         </>

@@ -23,19 +23,16 @@ function HeaderNav({ handleToggle }) {
                     </Link>
                     <HeaderNavUl>
                         <li>
-                            <Link to="/">Криптовалюты</Link>
+                            <Link to="/cryptocurrencies">Криптовалюты</Link>
                         </li>
                         <li>
-                            <Link to="/">Криптовалюты</Link>
+                            <Link to="/exchanges">Биржи</Link>
                         </li>
                         <li>
-                            <Link to="/">Криптовалюты</Link>
+                            <Link to="/more">Подробнее</Link>
                         </li>
                         <li>
-                            <Link to="/">Криптовалюты</Link>
-                        </li>
-                        <li>
-                            <Link to="/">Криптовалюты</Link>
+                            <Link to="/about">О нас</Link>
                         </li>
                     </HeaderNavUl>
                     <div>
