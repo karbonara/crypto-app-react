@@ -11,6 +11,10 @@ export const HeaderNavWrapper = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media (max-width: 640px) {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
     & a {
         text-decoration: none;
         color: #000000;
@@ -40,3 +44,20 @@ export const HeaderNavUl = styled.ul`
         }
     }
 `;
+// export const HeaderNavInput = styled.input`
+//     display: none;
+//     @media (max-width: 1300px) {
+//         display: block;
+//     }
+// `;
+// export const HeaderNavLabel = styled.label`
+//     display: flex; 
+//     align-items: center; 
+//     position: fixed;
+//     top: 20px;
+//     left: 20px;
+//     width: 26px;
+//     height: 26px;
+//     cursor: pointer;
+//     z-index: 1;
+// `;
